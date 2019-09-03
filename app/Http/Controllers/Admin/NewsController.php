@@ -75,13 +75,14 @@ class NewsController extends Controller{
       }
       /*上記のif文に記述されている 'image' と 'remove'　についてのunsetはこの下に移せるのか？*/
       unset($news_form['_token']);
+      
       $news->fill($news_form)->save();
       
       $history = new History;
       $history->news_id = $news->id;
       $history->edited_at = Carbon::now();
       $history->save();
-      
+      /*１行下のコードと２行上のコードがかぶってる。記述ミスか？必要無くない？*/
       $history->edited_at = Carbon::now();
       $history->save();
       

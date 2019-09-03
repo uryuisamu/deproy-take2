@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class News extends Model　
+class News extends Model
 {   
     protected $guarded = array('id');
     
@@ -12,6 +12,7 @@ class News extends Model　
         'title' => 'required',
         'body' => 'required',
     );
+    
     public function histories()
     {
       return $this->hasMany('App\History');

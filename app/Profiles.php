@@ -14,5 +14,10 @@ class Profiles extends Model
         'gender' => 'required',
         'hobby' => 'required',
         'introduction' => 'required',
-    ); 
+    );
+    
+    public function log()
+    {
+      return $this->hasMany('App\Log');
+    }  
 }
