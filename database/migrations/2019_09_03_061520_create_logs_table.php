@@ -13,8 +13,8 @@ class CreateLogTable extends Migration
      */
     public function up()
     {
-        Schema::create('log', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('logs', function (Blueprint $table) {
+            $table->BigIncrements('id');
             $table->integer('profiles_id');
             $table->string('edited_at');
            
@@ -29,6 +29,6 @@ class CreateLogTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('log');
+        Schema::dropIfExists('logs');
     }
 }

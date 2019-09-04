@@ -9,8 +9,8 @@ use App\History;
 
 use Carbon\Carbon;
 
-class NewsController extends Controller{
-  
+class NewsController extends Controller
+{
     public function add(){
         return view('admin.news.create');
     } 
@@ -56,7 +56,7 @@ class NewsController extends Controller{
       if (empty($news)) {
         abort(404);    
       }
-     
+      
       return view('admin.news.edit', ['news_form' => $news]);
     }
     
@@ -80,9 +80,6 @@ class NewsController extends Controller{
       
       $history = new History;
       $history->news_id = $news->id;
-      $history->edited_at = Carbon::now();
-      $history->save();
-      /*１行下のコードと２行上のコードがかぶってる。記述ミスか？必要無くない？*/
       $history->edited_at = Carbon::now();
       $history->save();
       

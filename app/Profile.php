@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Profiles extends Model
+class Profile extends Model
 {
     //下記コードの効果が不明。要確認。
     protected $guarded = array('id');
@@ -16,8 +16,8 @@ class Profiles extends Model
         'introduction' => 'required',
     );
     
-    public function log()
-    {
-      return $this->hasMany('App\Log');
-    }  
+    // public function logs()
+    // {
+    // return $this->hasMany('App\Log');
+    // }  
 }
