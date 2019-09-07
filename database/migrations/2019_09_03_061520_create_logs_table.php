@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLogTable extends Migration
+class CreateLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,8 @@ class CreateLogTable extends Migration
     public function up()
     {
         Schema::create('logs', function (Blueprint $table) {
-            $table->BigIncrements('id');
-            $table->integer('profiles_id');
+            $table->increments('id');
+            $table->integer('profile_id');
             $table->string('edited_at');
            
             $table->timestamps();
