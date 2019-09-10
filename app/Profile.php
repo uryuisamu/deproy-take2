@@ -16,8 +16,8 @@ class Profile extends Model
         'introduction' => 'required',
     );
     
-    // public function logs()
-    // {
-    // return $this->hasMany('App\Log');
-    // }  
+    public function logs()
+    {
+      return $this->hasMany('App\Log');
+    }  
 }
